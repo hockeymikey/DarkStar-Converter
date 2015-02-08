@@ -56,8 +56,8 @@ for f in os.listdir("."):
         if verbose:
             print(url)
         http = urllib2.urlopen(url)
-        info = json.loads(http.read())
         if http.code == 200:
+            info = json.loads(http.read())
             uuid = info["id"]
             if dashes:
                 uuid = str(uid.UUID(uuid))

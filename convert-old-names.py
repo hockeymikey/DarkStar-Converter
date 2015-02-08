@@ -13,6 +13,7 @@ dirname   = "."
 timestamp = None
 dashes    = True
 upcase    = False
+verbose   = False
 
 reading_time = False
 for arg in sys.argv[1:]:
@@ -25,10 +26,12 @@ for arg in sys.argv[1:]:
         dashes = False
     elif arg == "-f":
         force = True
-    elif arg == "-t":
-        reading_time = True
     elif arg == "-u":
         upcase = True
+    elif arg == "-v":
+        verbose = True
+    elif arg == "-t":
+        reading_time = True
     else:
         dirname = arg
         break
@@ -50,7 +53,8 @@ for f in os.listdir("."):
         # find oldest date
         time = timestamp or min(time)
         url  = "https://api.mojang.com/users/profiles/minecraft/%s?at=%s" % (name, int(time))
-        print(url)
+        if verbose:
+            print(url)
         http = urllib2.urlopen(url)
         info = json.loads(http.read())
         if http.code == 200:

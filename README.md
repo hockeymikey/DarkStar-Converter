@@ -11,7 +11,7 @@ A tool that is able to converts username-based file names (of users that may hav
 
 # Usage
 
-`convert-old-names.py [-s] [-D] [-f] [-u] [-t timestamp] [dir]`
+`convert-old-names.py [-s] [-D] [-f] [-u] [-v] [-t timestamp] [dir]`
 
 ```txt
 
@@ -30,6 +30,10 @@ A tool that is able to converts username-based file names (of users that may hav
 -u
   use uppercase UUIDs
     default: lowercase UUIDs
+
+-v
+  be verbose. prints URLs
+    default: don't be verbose
 
 -t <timestamp>
   use instead of file date

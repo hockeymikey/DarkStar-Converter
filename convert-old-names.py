@@ -68,7 +68,7 @@ for f in os.listdir("."):
             newfile = os.extsep.join([uuid, fileext])
             print("%s -> %s" % (f, newfile))
             if os.access(newfile, os.R_OK):
-                print("File exists: %s" % (newfile))
+                print("File exists: %s" % newfile)
                 if force:
                     print("(Force overwriting)")
                 else:
@@ -76,7 +76,7 @@ for f in os.listdir("."):
             if not simulate:
                 os.rename(f, newfile)
         elif http.code == 204:
-            print("Skipping %s - no UUID known")
+            print("Skipping %s - no UUID known" % name)
         else:
             print("Mojang error")
             print("HTTP Code: %s" % http.code)

@@ -11,9 +11,13 @@ A tool that is able to converts username-based file names (of users that may hav
 
 # Usage
 
-`convert-old-names.py [-D] [-f] [-u] [-t timestamp] [dir]`
+`convert-old-names.py [-s] [-D] [-f] [-u] [-t timestamp] [dir]`
 
 ```txt
+
+-s
+  simulate. don't rename any files
+    default: do not simulate
 
 -D
   don't use dashed UUID format

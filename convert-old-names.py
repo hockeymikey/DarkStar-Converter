@@ -52,19 +52,13 @@ for f in os.listdir("."):
                 time.append(stat.st_birthtime)
         # find oldest date
         time = timestamp or min(time)
-        url  = "https://api.mojang.com/users/profiles/minecraft/%s?at=%s" % (name, int(time))
+        url  = "https://us.mc-api.net/v3/name/$s" % (name)
         if verbose:
             print(url)
         http = urllib2.urlopen(url)
         if http.code == 200:
             info = json.loads(http.read())
-            uuid = info["id"]
-            if dashes:
-                uuid = str(uid.UUID(uuid))
-            if upcase:
-                uuid = uuid.upper()
-            if name != info["name"].lower():
-                print("%s changed name to %s" % (name, info["name"]))
+            uuid = info["name"]
             newfile = os.extsep.join([uuid, fileext])
             print("%s -> %s" % (f, newfile))
             if os.access(newfile, os.R_OK):

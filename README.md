@@ -1,6 +1,9 @@
 # DarkStar Converter
 
 A tool that converts all UUID based file names to their Minecraft username based ones.  Created to convert from AddStar's branch Multiverse-Inventories of newer UUID based files back to the older username based ones so they could be converted in PerWorldInventories using MV-I 2.5.
+
+Based on the old-name-converter by RedstonerServer.  Credit to him for providing the base for the edit.
+
 # Example:
 
 | New filename      | Old filename                                |
